@@ -41,6 +41,17 @@ export const plaidItems = pgTable(
      * resume point, never ahead of applied data. Null = never synced.
      */
     syncCursor: text("sync_cursor"),
+    /**
+     * Lifecycle (Step 1.4): `stale` means the connection lost
+     * login/permission and its data must not be presented as
+     * current — the status is the suppression source Phase 4's
+     * briefing reads. `stale_reason` is machine-readable and drives
+     * the user-facing re-auth copy; transitions are applied by the
+     * webhook state machine (src/plaid/webhooks/handler.ts).
+     */
+    status: text("status").notNull().default("active"),
+    staleReason: text("stale_reason"),
+    statusChangedAt: ts("status_changed_at").notNull().defaultNow(),
     createdAt: ts("created_at").notNull().defaultNow(),
   },
   (t) => [
