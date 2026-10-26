@@ -12,6 +12,23 @@ jobs:
   quality:
     name: Typecheck, lint, tests, coverage gate
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: finbrief_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    env:
+      # Test suite's database; the vitest global setup adopts this
+      # instead of starting a throwaway Docker container.
+      TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/finbrief_test
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5

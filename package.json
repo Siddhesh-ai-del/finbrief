@@ -4,6 +4,7 @@
   "private": true,
   "description": "Read-only personal-finance agent: scheduled, source-linked briefings on where your money went and whom you owe.",
   "license": "Apache-2.0",
+  "type": "module",
   "engines": {
     "node": ">=22"
   },
@@ -18,7 +19,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
   },
   "dependencies": {
     "@langfuse/otel": "6.0.2",
