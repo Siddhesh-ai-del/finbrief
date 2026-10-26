@@ -36,6 +36,9 @@ id_rsa*
 secrets.*
 credentials.*
 *.service-account.json
+# …but source modules may legitimately carry the name (plan Step 1.2).
+!src/**/secrets.ts
+!tests/**/secrets.test.ts
 
 # Editor & OS
 .DS_Store

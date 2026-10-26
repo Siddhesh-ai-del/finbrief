@@ -15,6 +15,7 @@ import {
   invitation,
   member,
   organization,
+  plaidItems,
   session,
   user,
   verification,
@@ -29,6 +30,7 @@ const tables = {
   member,
   invitation,
   consentRecords,
+  plaidItems,
 } as const;
 
 function indexNames(table: (typeof tables)[keyof typeof tables]): string[] {
@@ -77,6 +79,10 @@ describe("schema config", () => {
       "consent_records_user_id_idx",
     ]);
     expect(indexNames(user)).toEqual([]);
+    expect(indexNames(plaidItems)).toEqual([
+      "plaid_items_org_idx",
+      "plaid_items_item_id_idx",
+    ]);
   });
 
   it("resolves every foreign key and pins its cascade rule", () => {
@@ -116,6 +122,14 @@ describe("schema config", () => {
         foreignColumns: "id",
       },
       { onDelete: "no action", columns: "inviter_id", foreignColumns: "id" },
+    ]);
+    // Stored bank items die with their tenant.
+    expect(fkRules(plaidItems)).toEqual([
+      {
+        onDelete: "cascade",
+        columns: "organization_id",
+        foreignColumns: "id",
+      },
     ]);
   });
 });

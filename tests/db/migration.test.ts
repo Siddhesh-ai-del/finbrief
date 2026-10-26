@@ -27,6 +27,7 @@ const EXPECTED_TABLES = [
   "invitation",
   "member",
   "organization",
+  "plaid_items",
   "run_credit_accounts",
   "run_credit_entries",
   "session",
@@ -98,7 +99,7 @@ afterAll(async () => {
 });
 
 describe("migration up", () => {
-  it("creates exactly the tenancy + consent tables from the plan", async () => {
+  it("creates exactly the application's tables from the plan", async () => {
     expect(await appTables(scratch.pool)).toEqual(EXPECTED_TABLES);
   });
 

@@ -15,6 +15,13 @@
       "when": 1792993649592,
       "tag": "0001_busy_lorna_dane",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793001176725,
+      "tag": "0002_plaid_items",
+      "breakpoints": true
     }
   ]
 }

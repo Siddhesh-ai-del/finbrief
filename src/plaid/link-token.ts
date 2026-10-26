@@ -148,7 +148,7 @@ const PLAID_ENVIRONMENTS = ["sandbox", "production"] as const;
  */
 export function createPlaidClientFromEnv(
   env: Record<string, string | undefined> = process.env,
-): PlaidLinkClient {
+): PlaidApi {
   const clientEnv = env.PLAID_ENV ?? "sandbox";
   if (!(PLAID_ENVIRONMENTS as readonly string[]).includes(clientEnv)) {
     throw new Error(

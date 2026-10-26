@@ -8,15 +8,18 @@ import * as billing from "./billing";
 import * as consent from "./consent";
 import * as core from "./core";
 import * as organization from "./organization";
+import * as plaid from "./plaid";
 
 export * from "./billing";
 export * from "./consent";
 export * from "./core";
 export * from "./organization";
+export * from "./plaid";
 
 export const schema = {
   ...core,
   ...organization,
   ...consent,
   ...billing,
+  ...plaid,
 };
