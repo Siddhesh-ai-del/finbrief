@@ -23,13 +23,23 @@ const SCRATCH_DB = "finbrief_migration_test";
 const EXPECTED_TABLES = [
   "account",
   "consent_records",
+  "entitlements",
   "invitation",
   "member",
   "organization",
+  "run_credit_accounts",
+  "run_credit_entries",
   "session",
   "user",
   "verification",
+  "webhook_events",
 ];
+
+/**
+ * Tables whose primary key is the tenant id instead of `id` — the
+ * one-row-per-organization billing tables.
+ */
+const ORG_SCOPED_PK_TABLES = new Set(["entitlements", "run_credit_accounts"]);
 
 interface SchemaSnapshot {
   columns: unknown[];
@@ -108,7 +118,10 @@ describe("migration up", () => {
     for (const table of EXPECTED_TABLES) {
       const pk = pks.find((r) => r.table_name === table);
       expect(pk, `missing PK on ${table}`).toBeDefined();
-      expect(pk?.column_name).toBe("id");
+      const expected = ORG_SCOPED_PK_TABLES.has(table)
+        ? "organization_id"
+        : "id";
+      expect(pk?.column_name, `PK column on ${table}`).toBe(expected);
     }
     const idType = await scratch.pool.query(
       `SELECT data_type FROM information_schema.columns
@@ -195,10 +208,11 @@ describe("migration up", () => {
         WHERE schemaname = 'public' AND indexname IN (
           'member_organization_id_idx', 'member_user_id_idx',
           'invitation_organization_id_idx', 'invitation_email_idx',
-          'consent_records_org_user_idx'
+          'consent_records_org_user_idx', 'entitlements_subscription_idx',
+          'run_credit_entries_org_idx'
         )`,
     );
-    expect(res.rows).toHaveLength(5);
+    expect(res.rows).toHaveLength(7);
   });
 });
 
