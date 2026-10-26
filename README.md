@@ -1,6 +1,7 @@
 # finbrief
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge&color=0F172A&labelColor=0F172A&logo=apache&logoColor=white)](LICENSE)
+[![Build](https://img.shields.io/github/actions/workflow/status/Siddhesh-ai-del/finbrief/ci.yml?style=for-the-badge&color=0F172A&labelColor=0F172A&label=build&logo=githubactions&logoColor=white)](https://github.com/Siddhesh-ai-del/finbrief/actions/workflows/ci.yml)
 [![Status](https://img.shields.io/badge/Status-pre--release-blue?style=for-the-badge&color=0F172A&labelColor=0F172A&logo=rocket&logoColor=white)](#project-status)
 [![Platform](https://img.shields.io/badge/Platform-Web-blue?style=for-the-badge&color=0F172A&labelColor=0F172A&logo=vercel&logoColor=white)](#architecture)
 [![Language](https://img.shields.io/badge/Language-TypeScript-blue?style=for-the-badge&color=0F172A&labelColor=0F172A&logo=typescript&logoColor=white)](#repository-layout)
