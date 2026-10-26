@@ -1,0 +1,49 @@
+name: Feature request
+description: Propose a capability by describing the problem it solves.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Problem first, solution second. finbrief's roadmap is derived from a
+        documented research brief — strong proposals connect to a real user
+        problem, not a fashionable technology.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user problem exists today? Who experiences it, and how often?
+      placeholder: As a person who…, I struggle to…, because…
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What should finbrief do? Describe the behavior, not the implementation.
+    validations:
+      required: true
+  - type: select
+    id: principle
+    attributes:
+      label: Which principle does this advance?
+      description: Pick the product principle from the README that this request serves best.
+      options:
+        - "Read-only by design — never moves money"
+        - "No figure without a source — computed, cited, timestamped"
+        - "Workflows first, agents second — bounded and testable"
+        - "Explain, not advise — reports and informs, does not recommend"
+        - "None of the above — new direction (explain below)"
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What workarounds exist today? Why are they insufficient?
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Examples, mockups, or references (no real financial data).

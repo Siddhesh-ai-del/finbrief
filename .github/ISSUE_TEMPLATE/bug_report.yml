@@ -1,0 +1,73 @@
+name: Bug report
+description: Report a reproducible problem in finbrief.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Redaction warning:** never paste credentials, API keys, tokens,
+        account numbers, or real financial data into this form. Replace them
+        with `[REDACTED]`. For security vulnerabilities, stop and use
+        [private reporting](https://github.com/Siddhesh-ai-del/finbrief/security/advisories/new)
+        instead.
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: This report contains no secrets, credentials, or real financial data.
+          required: true
+        - label: This is not a security vulnerability (those go through private reporting).
+          required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the observed behavior.
+      placeholder: When I…, I expected…, but instead…
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Minimal, numbered steps. Use synthetic/sandbox data only.
+      placeholder: |
+        1. …
+        2. …
+        3. …
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Fill in what you know. Leave unknown fields empty.
+      value: |
+        - Version / commit:
+        - OS:
+        - Runtime (and version):
+        - Browser (if UI):
+        - Deployment (local / preview / production):
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Redact anything sensitive before pasting.
+      render: shell
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else that might help.
