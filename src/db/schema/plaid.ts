@@ -35,6 +35,12 @@ export const plaidItems = pgTable(
     itemIdCiphertext: text("item_id_ciphertext").notNull(),
     accessTokenCiphertext: text("access_token_ciphertext").notNull(),
     itemIdIndex: text("item_id_index").notNull(),
+    /**
+     * Watermark for /transactions/sync (Step 1.3). Committed in the
+     * same transaction as the page it advances, so it is always a
+     * resume point, never ahead of applied data. Null = never synced.
+     */
+    syncCursor: text("sync_cursor"),
     createdAt: ts("created_at").notNull().defaultNow(),
   },
   (t) => [

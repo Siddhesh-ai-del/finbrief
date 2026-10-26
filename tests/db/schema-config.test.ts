@@ -17,6 +17,7 @@ import {
   organization,
   plaidItems,
   session,
+  transactions,
   user,
   verification,
 } from "../../src/db/schema";
@@ -31,6 +32,7 @@ const tables = {
   invitation,
   consentRecords,
   plaidItems,
+  transactions,
 } as const;
 
 function indexNames(table: (typeof tables)[keyof typeof tables]): string[] {
@@ -83,6 +85,10 @@ describe("schema config", () => {
       "plaid_items_org_idx",
       "plaid_items_item_id_idx",
     ]);
+    expect(indexNames(transactions)).toEqual([
+      "transactions_org_date_idx",
+      "transactions_item_txn_idx",
+    ]);
   });
 
   it("resolves every foreign key and pins its cascade rule", () => {
@@ -131,5 +137,20 @@ describe("schema config", () => {
         foreignColumns: "id",
       },
     ]);
+    // Transactions follow their tenant AND their owning item.
+    expect(fkRules(transactions)).toEqual(
+      expect.arrayContaining([
+        {
+          onDelete: "cascade",
+          columns: "organization_id",
+          foreignColumns: "id",
+        },
+        {
+          onDelete: "cascade",
+          columns: "plaid_item_id",
+          foreignColumns: "id",
+        },
+      ]),
+    );
   });
 });

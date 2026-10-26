@@ -31,6 +31,7 @@ const EXPECTED_TABLES = [
   "run_credit_accounts",
   "run_credit_entries",
   "session",
+  "transactions",
   "user",
   "verification",
   "webhook_events",

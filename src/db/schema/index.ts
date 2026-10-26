@@ -9,12 +9,14 @@ import * as consent from "./consent";
 import * as core from "./core";
 import * as organization from "./organization";
 import * as plaid from "./plaid";
+import * as transactions from "./transactions";
 
 export * from "./billing";
 export * from "./consent";
 export * from "./core";
 export * from "./organization";
 export * from "./plaid";
+export * from "./transactions";
 
 export const schema = {
   ...core,
@@ -22,4 +24,5 @@ export const schema = {
   ...consent,
   ...billing,
   ...plaid,
+  ...transactions,
 };

@@ -101,7 +101,8 @@ afterAll(async () => {
 beforeEach(async () => {
   mock = createExchangeMock();
   items = createItemExchange({ client: mock.client, secrets });
-  await pool.query("TRUNCATE plaid_items");
+  // CASCADE: migration 0003's transactions table references this one.
+  await pool.query("TRUNCATE plaid_items CASCADE");
 });
 
 afterEach(() => {

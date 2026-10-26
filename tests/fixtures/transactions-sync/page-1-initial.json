@@ -1,0 +1,169 @@
+{
+  "added": [
+    {
+      "account_id": "account-1",
+      "amount": 4.35,
+      "authorized_date": "2026-01-13",
+      "date": "2026-01-14",
+      "iso_currency_code": "USD",
+      "location": {
+        "address": "123 MAIN ST",
+        "city": "SEATTLE",
+        "region": "WA",
+        "postal_code": "98101",
+        "country": "US",
+        "lat": 47.6098,
+        "lon": -122.3332,
+        "store_number": "12345"
+      },
+      "name": "STARBUCKS STORE 123",
+      "merchant_name": "Starbucks",
+      "payment_channel": "in store",
+      "payment_meta": {
+        "reference_number": null,
+        "ppd_id": null,
+        "payee": null,
+        "by_order_of": null,
+        "payer": null,
+        "payment_method": null,
+        "payment_processor": null,
+        "reason": null
+      },
+      "pending": false,
+      "pending_transaction_id": null,
+      "account_owner": null,
+      "transaction_id": "txn_coffee",
+      "transaction_code": null,
+      "unofficial_currency_code": null,
+      "personal_finance_category": {
+        "primary": "FOOD_AND_DRINK",
+        "detailed": "COFFEE_SHOP"
+      }
+    },
+    {
+      "account_id": "account-1",
+      "amount": 83.27,
+      "authorized_date": "2026-01-15",
+      "date": "2026-01-15",
+      "iso_currency_code": "USD",
+      "location": {
+        "address": null,
+        "city": null,
+        "region": null,
+        "postal_code": null,
+        "country": null,
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "name": "TARGET STORE 1234",
+      "merchant_name": "Target",
+      "payment_channel": "in store",
+      "payment_meta": {
+        "reference_number": null,
+        "ppd_id": null,
+        "payee": null,
+        "by_order_of": null,
+        "payer": null,
+        "payment_method": null,
+        "payment_processor": null,
+        "reason": null
+      },
+      "pending": false,
+      "pending_transaction_id": null,
+      "account_owner": null,
+      "transaction_id": "txn_market",
+      "transaction_code": null,
+      "unofficial_currency_code": null,
+      "personal_finance_category": {
+        "primary": "SHOPPING",
+        "detailed": "DEPARTMENT_STORES"
+      }
+    },
+    {
+      "account_id": "account-2",
+      "amount": 15.99,
+      "authorized_date": null,
+      "date": "2026-01-16",
+      "iso_currency_code": "USD",
+      "location": {
+        "address": null,
+        "city": null,
+        "region": null,
+        "postal_code": null,
+        "country": null,
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "name": "NETFLIX.COM",
+      "merchant_name": null,
+      "payment_channel": "online",
+      "payment_meta": {
+        "reference_number": null,
+        "ppd_id": null,
+        "payee": null,
+        "by_order_of": null,
+        "payer": null,
+        "payment_method": null,
+        "payment_processor": null,
+        "reason": null
+      },
+      "pending": true,
+      "pending_transaction_id": null,
+      "account_owner": null,
+      "transaction_id": "txn_stream",
+      "transaction_code": null,
+      "unofficial_currency_code": null,
+      "personal_finance_category": {
+        "primary": "ENTERTAINMENT",
+        "detailed": "VIDEO_ON_DEMAND"
+      }
+    },
+    {
+      "account_id": "account-2",
+      "amount": 41.02,
+      "authorized_date": "2026-01-16",
+      "date": "2026-01-16",
+      "iso_currency_code": "USD",
+      "location": {
+        "address": null,
+        "city": null,
+        "region": null,
+        "postal_code": null,
+        "country": null,
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "name": "SHELL OIL 57483",
+      "merchant_name": "Shell",
+      "payment_channel": "in store",
+      "payment_meta": {
+        "reference_number": null,
+        "ppd_id": null,
+        "payee": null,
+        "by_order_of": null,
+        "payer": null,
+        "payment_method": null,
+        "payment_processor": null,
+        "reason": null
+      },
+      "pending": false,
+      "pending_transaction_id": null,
+      "account_owner": null,
+      "transaction_id": "txn_gas",
+      "transaction_code": null,
+      "unofficial_currency_code": null,
+      "personal_finance_category": {
+        "primary": "TRANSPORTATION",
+        "detailed": "GAS"
+      }
+    }
+  ],
+  "modified": [],
+  "removed": [],
+  "next_cursor": "cursor-1",
+  "has_more": true,
+  "request_id": "req-sync-1"
+}
