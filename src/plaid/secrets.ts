@@ -42,9 +42,7 @@ export function createSecretBox(rootKeyBase64: string): SecretBox {
       `encryption key must decode to ${ENCRYPTION_KEY_BYTES} bytes`,
     );
   }
-  const indexKey = createHmac("sha256", rootKey)
-    .update(INDEX_DOMAIN)
-    .digest();
+  const indexKey = createHmac("sha256", rootKey).update(INDEX_DOMAIN).digest();
 
   return {
     encrypt(plaintext: string): string {
