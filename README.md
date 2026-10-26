@@ -126,10 +126,25 @@ finbrief/
 ├── SECURITY.md
 ├── SUPPORT.md
 ├── LICENSE
-├── .gitignore
+├── package.json
+├── drizzle.config.ts
+├── vitest.config.ts
+├── eslint.config.mjs
+├── next.config.ts
 ├── docs/
-│   └── README.md
+│   ├── README.md
+│   └── launch-blockers.md
+├── src/
+│   ├── app/             Next.js app shell
+│   ├── auth/            Better Auth sessions + organizations
+│   ├── billing/         Stripe webhook state machine + run-credit ledger
+│   └── db/              schema/, migrations/, tenant-scoped helpers
+├── tests/
+│   ├── app/  auth/  billing/  db/  stack/
+│   ├── helpers/         shared throwaway-database fixtures
+│   └── harness.test.ts
 └── .github/
+    ├── workflows/ci.yml
     ├── CODEOWNERS
     ├── PULL_REQUEST_TEMPLATE.md
     └── ISSUE_TEMPLATE/
