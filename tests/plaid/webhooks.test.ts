@@ -127,7 +127,11 @@ afterAll(async () => {
 beforeEach(async () => {
   await pool.query("TRUNCATE transactions");
   await pool.query(
-    "UPDATE plaid_items SET status = 'active', stale_reason = NULL",
+    `UPDATE plaid_items
+        SET status = 'active', stale_reason = NULL,
+            access_token_ciphertext = $2
+      WHERE id = $1`,
+    [ourItemId, secrets.encrypt("plaid-access-credential-0001")],
   );
   syncItem = vi.fn(async () => ({ pages: 0 }));
   onStale = vi.fn();
@@ -148,6 +152,49 @@ describe("SYNC_UPDATES_AVAILABLE", () => {
       status: "active",
       stale_reason: null,
     });
+    expect(onStale).not.toHaveBeenCalled();
+  });
+});
+
+describe("removed items (Step 1.6 tombstones)", () => {
+  it("ignores SYNC_UPDATES_AVAILABLE for a removed item — no sync, no resurrection", async () => {
+    await pool.query(
+      `UPDATE plaid_items
+          SET status = 'removed', removed_at = now(),
+              purge_after = now() + interval '30 days',
+              access_token_ciphertext = ''
+        WHERE id = $1`,
+      [ourItemId],
+    );
+
+    const outcome = await handler.handle(
+      db,
+      payload("SYNC_UPDATES_AVAILABLE", { webhook_type: "TRANSACTIONS" }),
+    );
+
+    // Acknowledged so Plaid stops retrying; nothing else happens —
+    // the access token is dead at Plaid, so syncing would only 500.
+    expect(outcome).toBe("ignored");
+    expect(syncItem).not.toHaveBeenCalled();
+    expect(await itemState()).toEqual({
+      status: "removed",
+      stale_reason: null,
+    });
+  });
+
+  it("a stale-transition code does not overwrite a removed tombstone", async () => {
+    await pool.query(
+      `UPDATE plaid_items
+          SET status = 'removed', removed_at = now(),
+              purge_after = now() + interval '30 days'
+        WHERE id = $1`,
+      [ourItemId],
+    );
+
+    const outcome = await handler.handle(db, payload("ITEM_LOGIN_REQUIRED"));
+
+    expect(outcome).toBe("ignored");
+    expect(await itemState().then((s) => s.status)).toBe("removed");
     expect(onStale).not.toHaveBeenCalled();
   });
 });

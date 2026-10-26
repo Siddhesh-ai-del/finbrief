@@ -42,16 +42,27 @@ export const plaidItems = pgTable(
      */
     syncCursor: text("sync_cursor"),
     /**
-     * Lifecycle (Step 1.4): `stale` means the connection lost
+     * Lifecycle (Step 1.4 + 1.6): `stale` means the connection lost
      * login/permission and its data must not be presented as
-     * current — the status is the suppression source Phase 4's
-     * briefing reads. `stale_reason` is machine-readable and drives
-     * the user-facing re-auth copy; transitions are applied by the
-     * webhook state machine (src/plaid/webhooks/handler.ts).
+     * current; `removed` means unsubscribe ran /item/remove — Plaid
+     * has invalidated the access token (billing stops there) and the
+     * row is now a tombstone whose data is retained only until
+     * `purge_after` (Phase 6.3's deletion job). The status is the
+     * suppression source Phase 4's briefing reads; transitions are
+     * applied by the webhook state machine (src/plaid/webhooks/
+     * handler.ts) and unsubscribe (src/billing/unsubscribe.ts).
      */
     status: text("status").notNull().default("active"),
     staleReason: text("stale_reason"),
     statusChangedAt: ts("status_changed_at").notNull().defaultNow(),
+    /** Set when unsubscribe removes the item (Step 1.6). */
+    removedAt: ts("removed_at"),
+    /**
+     * When the tombstone and its cascading transactions become
+     * eligible for deletion — `removed_at` plus the configured
+     * retention window (Step 1.6; the purge job is Phase 6.3).
+     */
+    purgeAfter: ts("purge_after"),
     createdAt: ts("created_at").notNull().defaultNow(),
   },
   (t) => [

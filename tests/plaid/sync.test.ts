@@ -297,6 +297,44 @@ describe("unknown item", () => {
   });
 });
 
+describe("removed item (Step 1.6 tombstone)", () => {
+  it("syncs as a no-op without calling Plaid or decrypting the dead token", async () => {
+    await pool.query(
+      `UPDATE plaid_items
+          SET status = 'removed', removed_at = now(),
+              purge_after = now() + interval '30 days',
+              access_token_ciphertext = ''
+        WHERE id = $1`,
+      [itemId],
+    );
+    try {
+      const mock = createSyncMock([page1]);
+      const sync = createTransactionSync({ client: mock.client, secrets });
+
+      const summary = await sync.syncItem(db, itemId);
+
+      // The access token is dead at Plaid: calling would fail and make
+      // the scheduled catch-up crash-loop on a deleted connection.
+      expect(summary).toEqual({
+        pages: 0,
+        added: 0,
+        modified: 0,
+        removed: 0,
+        restarts: 0,
+      });
+      expect(mock.calls).toHaveLength(0);
+    } finally {
+      await pool.query(
+        `UPDATE plaid_items
+            SET status = 'active', removed_at = NULL, purge_after = NULL,
+                access_token_ciphertext = $2
+          WHERE id = $1`,
+        [itemId, secrets.encrypt(ACCESS_PLAINTEXT)],
+      );
+    }
+  });
+});
+
 /** Deterministic PRNG so the property test is CI-stable. */
 function mulberry32(seed: number): () => number {
   let a = seed;

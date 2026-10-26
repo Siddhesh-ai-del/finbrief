@@ -219,6 +219,7 @@ export function createTransactionSync(options: SyncItemOptions) {
         organizationId: plaidItems.organizationId,
         accessTokenCiphertext: plaidItems.accessTokenCiphertext,
         syncCursor: plaidItems.syncCursor,
+        status: plaidItems.status,
       })
       .from(plaidItems)
       .where(eq(plaidItems.id, itemId))
@@ -226,6 +227,13 @@ export function createTransactionSync(options: SyncItemOptions) {
     const item = rows[0];
     if (!item) {
       throw new SyncItemNotFoundError(itemId);
+    }
+
+    // Step 1.6 tombstone: unsubscribe invalidated the token at Plaid
+    // (and zeroed the ciphertext here) — calling upstream would only
+    // crash-loop the scheduled catch-up on a deleted connection.
+    if (item.status === "removed") {
+      return { pages: 0, added: 0, modified: 0, removed: 0, restarts: 0 };
     }
 
     const accessToken = options.secrets.decrypt(item.accessTokenCiphertext);

@@ -103,6 +103,14 @@ export function createWebhookHandler(options: WebhookHandlerOptions) {
       return "ignored";
     }
 
+    // Step 1.6 tombstone: /item/remove invalidated the access token
+    // at Plaid, so there is nothing to sync and nothing to grow stale
+    // about — acknowledge every code without touching state (a stale
+    // transition here would overwrite the tombstone).
+    if (item.status === "removed") {
+      return "ignored";
+    }
+
     const { webhook_type: type, webhook_code: code } = payload;
 
     if (type === "TRANSACTIONS" && code === "SYNC_UPDATES_AVAILABLE") {
