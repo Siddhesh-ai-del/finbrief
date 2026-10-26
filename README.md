@@ -15,12 +15,12 @@ chooses — delivers a briefing written by an agent. Every amount in a briefing
 is computed by a tested aggregation function and cited back to the data it
 came from. The product never moves money.
 
-| Principle | What it means |
-|---|---|
-| Read-only by design | Bank connections are read-only. finbrief can never initiate a payment, transfer, or trade. |
-| No figure without a source | Every rendered amount carries a `sourceRef` to its underlying data and an `as_of` timestamp. Figures are computed by code; the model only narrates. |
+| Principle                      | What it means                                                                                                                                                                             |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Read-only by design            | Bank connections are read-only. finbrief can never initiate a payment, transfer, or trade.                                                                                                |
+| No figure without a source     | Every rendered amount carries a `sourceRef` to its underlying data and an `as_of` timestamp. Figures are computed by code; the model only narrates.                                       |
 | Workflows first, agents second | The core intents run as bounded, predefined pipelines. An open-ended tool loop is reserved for genuinely open questions — and is capped by step count, cost budget, and iteration limits. |
-| Explain, not advise | finbrief reports and explains. It does not recommend securities and does not claim to replace a financial professional. |
+| Explain, not advise            | finbrief reports and explains. It does not recommend securities and does not claim to replace a financial professional.                                                                   |
 
 ## Why finbrief
 
@@ -78,15 +78,15 @@ work is real.
 
 ### Roadmap
 
-| Phase | Scope | Status |
-|---|---|---|
-| 0 | Test harness and coverage gate, multi-tenant skeleton (auth, organizations, billing), plus the non-engineering blockers (Plaid production access, legal review, security program) | Planned |
-| 1 | Data core: Plaid Link, encrypted token storage, idempotent sync worker, webhook handling, adversarial input sanitization | Planned |
-| 2 | Insight layer: fixed aggregation tools, freshness rules, first golden dataset | Planned |
-| 3 | Debt/IOU ledger with invariant property tests and transaction linking | Planned |
-| 4 | Agent + evaluation gate as one unit: structured-output source enforcement, bounded loop, prompt-injection suite, CI eval gate, trace masking | Planned |
-| 5 | Scheduled briefings: cron with jitter, fail-closed delivery, model routing and credit metering | Planned |
-| 6 | Hardening and launch gates: end-to-end tests, security sweep, measured-economics re-run, blocker sign-off | Planned |
+| Phase | Scope                                                                                                                                                                             | Status  |
+| ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| 0     | Test harness and coverage gate, multi-tenant skeleton (auth, organizations, billing), plus the non-engineering blockers (Plaid production access, legal review, security program) | Planned |
+| 1     | Data core: Plaid Link, encrypted token storage, idempotent sync worker, webhook handling, adversarial input sanitization                                                          | Planned |
+| 2     | Insight layer: fixed aggregation tools, freshness rules, first golden dataset                                                                                                     | Planned |
+| 3     | Debt/IOU ledger with invariant property tests and transaction linking                                                                                                             | Planned |
+| 4     | Agent + evaluation gate as one unit: structured-output source enforcement, bounded loop, prompt-injection suite, CI eval gate, trace masking                                      | Planned |
+| 5     | Scheduled briefings: cron with jitter, fail-closed delivery, model routing and credit metering                                                                                    | Planned |
+| 6     | Hardening and launch gates: end-to-end tests, security sweep, measured-economics re-run, blocker sign-off                                                                         | Planned |
 
 ## Installation
 
