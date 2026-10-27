@@ -1,0 +1,124 @@
+{"id":"c001","name":"ACME CORP PAYROLL 1020","merchantName":"ACME CORP","amountCents":-312500,"expectedPrimary":"INCOME","source":"hand-reviewed","reviewed":true}
+{"id":"c002","name":"DIRECT DEP ACME CORP BIWK","merchantName":null,"amountCents":-156200,"expectedPrimary":"INCOME","source":"hand-reviewed","reviewed":true}
+{"id":"c003","name":"GUSTO PAYROLL ACME","merchantName":"GUSTO","amountCents":-298000,"expectedPrimary":"INCOME","source":"hand-reviewed","reviewed":true}
+{"id":"c004","name":"SSA TREAS 310 XXMISC PMENT","merchantName":"SSA","amountCents":-120400,"expectedPrimary":"INCOME","source":"hand-reviewed","reviewed":true}
+{"id":"c005","name":"UBER *DRIVER PAYOUT","merchantName":"UBER","amountCents":-8450,"expectedPrimary":"INCOME","source":"hand-reviewed","reviewed":true}
+{"id":"c006","name":"INTEREST PAYMENT 0.42 APY","merchantName":null,"amountCents":-118,"expectedPrimary":"INCOME","source":"hand-reviewed","reviewed":true}
+{"id":"c007","name":"CHASE AUTO LOAN PMT","merchantName":"CHASE","amountCents":48700,"expectedPrimary":"LOAN_PAYMENTS","source":"hand-reviewed","reviewed":true}
+{"id":"c008","name":"SALLIE MAE STUDENT LOAN","merchantName":"SALLIE MAE","amountCents":32115,"expectedPrimary":"LOAN_PAYMENTS","source":"hand-reviewed","reviewed":true}
+{"id":"c009","name":"AMEX CREDIT CARD PAYMENT","merchantName":"AMEX","amountCents":150000,"expectedPrimary":"LOAN_PAYMENTS","source":"hand-reviewed","reviewed":true}
+{"id":"c010","name":"AFFIRM BNPL PAYMENT 3/4","merchantName":"AFFIRM","amountCents":2999,"expectedPrimary":"LOAN_PAYMENTS","source":"hand-reviewed","reviewed":true}
+{"id":"c011","name":"SOFI PERSONAL LOAN PMT","merchantName":"SOFI","amountCents":24500,"expectedPrimary":"LOAN_PAYMENTS","source":"hand-reviewed","reviewed":true}
+{"id":"c012","name":"ROCKET MORTGAGE PAYMENT","merchantName":"ROCKET MORTGAGE","amountCents":182300,"expectedPrimary":"LOAN_PAYMENTS","source":"hand-reviewed","reviewed":true}
+{"id":"c013","name":"SOFI LOAN DISBURSEMENT","merchantName":"SOFI","amountCents":500000,"expectedPrimary":"LOAN_DISBURSEMENTS","source":"hand-reviewed","reviewed":true}
+{"id":"c014","name":"CASH ADVANCE PAYPAL","merchantName":"PAYPAL","amountCents":20000,"expectedPrimary":"LOAN_DISBURSEMENTS","source":"hand-reviewed","reviewed":true}
+{"id":"c015","name":"UPSIDE EWA PAYDAY ADV","merchantName":"UPSIDE","amountCents":15000,"expectedPrimary":"LOAN_DISBURSEMENTS","source":"hand-reviewed","reviewed":true}
+{"id":"c016","name":"NAVREF STUDENT LOAN DISBURSEMENT","merchantName":"NAVREF","amountCents":3500000,"expectedPrimary":"LOAN_DISBURSEMENTS","source":"hand-reviewed","reviewed":true}
+{"id":"c017","name":"CAPITAL ONE AUTO LOAN DISBURSEMENT","merchantName":"CAPITAL ONE","amountCents":2200000,"expectedPrimary":"LOAN_DISBURSEMENTS","source":"hand-reviewed","reviewed":true}
+{"id":"c018","name":"QUICKEN LOANS MORTGAGE DISBURSEMENT","merchantName":"QUICKEN LOANS","amountCents":32000000,"expectedPrimary":"LOAN_DISBURSEMENTS","source":"hand-reviewed","reviewed":true}
+{"id":"c019","name":"TRANSFER FROM SAVINGS ****4412","merchantName":null,"amountCents":-50000,"expectedPrimary":"TRANSFER_IN","source":"hand-reviewed","reviewed":true}
+{"id":"c020","name":"ZELLE RECEIPT FROM J SMITH","merchantName":"ZELLE","amountCents":-4500,"expectedPrimary":"TRANSFER_IN","source":"hand-reviewed","reviewed":true}
+{"id":"c021","name":"VENMO CASHOUT","merchantName":"VENMO","amountCents":-12000,"expectedPrimary":"TRANSFER_IN","source":"hand-reviewed","reviewed":true}
+{"id":"c022","name":"WIRE INCOMING CHASE","merchantName":"CHASE","amountCents":-250000,"expectedPrimary":"TRANSFER_IN","source":"hand-reviewed","reviewed":true}
+{"id":"c023","name":"ATM DEPOSIT 10/02","merchantName":null,"amountCents":-20000,"expectedPrimary":"TRANSFER_IN","source":"hand-reviewed","reviewed":true}
+{"id":"c024","name":"VANGUARD TRANSFER IN","merchantName":"VANGUARD","amountCents":-100000,"expectedPrimary":"TRANSFER_OUT","source":"hand-reviewed","reviewed":true}
+{"id":"c025","name":"TRANSFER TO SAVINGS ****9931","merchantName":null,"amountCents":50000,"expectedPrimary":"TRANSFER_OUT","source":"hand-reviewed","reviewed":true}
+{"id":"c026","name":"ZELLE SENT TO A BROWN","merchantName":"ZELLE","amountCents":6000,"expectedPrimary":"TRANSFER_OUT","source":"hand-reviewed","reviewed":true}
+{"id":"c027","name":"VENMO PAYMENT TO J DOE","merchantName":"VENMO","amountCents":3200,"expectedPrimary":"TRANSFER_OUT","source":"hand-reviewed","reviewed":true}
+{"id":"c028","name":"ACATS TRANSFER TO FIDELITY","merchantName":"FIDELITY","amountCents":200000,"expectedPrimary":"TRANSFER_OUT","source":"hand-reviewed","reviewed":true}
+{"id":"c029","name":"WIRE OUT TO ESCROW","merchantName":null,"amountCents":450000,"expectedPrimary":"TRANSFER_OUT","source":"hand-reviewed","reviewed":true}
+{"id":"c030","name":"CRYPTO BUY COINBASE","merchantName":"COINBASE","amountCents":10000,"expectedPrimary":"TRANSFER_OUT","source":"hand-reviewed","reviewed":true}
+{"id":"c031","name":"ATM FEE NON NETWORK","merchantName":null,"amountCents":300,"expectedPrimary":"BANK_FEES","source":"hand-reviewed","reviewed":true}
+{"id":"c032","name":"OVERDRAFT FEE CHASE","merchantName":"CHASE","amountCents":3500,"expectedPrimary":"BANK_FEES","source":"hand-reviewed","reviewed":true}
+{"id":"c033","name":"INSUFFICIENT FUNDS FEE","merchantName":null,"amountCents":2900,"expectedPrimary":"BANK_FEES","source":"hand-reviewed","reviewed":true}
+{"id":"c034","name":"FOREIGN TXN FEE 1%","merchantName":null,"amountCents":187,"expectedPrimary":"BANK_FEES","source":"hand-reviewed","reviewed":true}
+{"id":"c035","name":"LATE FEE AMEX","merchantName":"AMEX","amountCents":2900,"expectedPrimary":"BANK_FEES","source":"hand-reviewed","reviewed":true}
+{"id":"c036","name":"ANNUAL FEE CHASE SAPPHIRE","merchantName":"CHASE","amountCents":9500,"expectedPrimary":"BANK_FEES","source":"hand-reviewed","reviewed":true}
+{"id":"c037","name":"NETFLIX.COM","merchantName":"NETFLIX","amountCents":1599,"expectedPrimary":"ENTERTAINMENT","source":"hand-reviewed","reviewed":true}
+{"id":"c038","name":"SPOTIFY USA","merchantName":"SPOTIFY","amountCents":1199,"expectedPrimary":"ENTERTAINMENT","source":"hand-reviewed","reviewed":true}
+{"id":"c039","name":"AMC THEATRES 17","merchantName":"AMC","amountCents":1750,"expectedPrimary":"ENTERTAINMENT","source":"hand-reviewed","reviewed":true}
+{"id":"c040","name":"STEAM GAMES","merchantName":"STEAM","amountCents":5999,"expectedPrimary":"ENTERTAINMENT","source":"hand-reviewed","reviewed":true}
+{"id":"c041","name":"DRAFTKINGS SPORTSBOOK","merchantName":"DRAFTKINGS","amountCents":5000,"expectedPrimary":"ENTERTAINMENT","source":"hand-reviewed","reviewed":true}
+{"id":"c042","name":"TICKETMASTER *CONCERT","merchantName":"TICKETMASTER","amountCents":12800,"expectedPrimary":"ENTERTAINMENT","source":"hand-reviewed","reviewed":true}
+{"id":"c043","name":"STARBUCKS #14397 SEATTLE","merchantName":"STARBUCKS","amountCents":645,"expectedPrimary":"FOOD_AND_DRINK","source":"hand-reviewed","reviewed":true}
+{"id":"c044","name":"MCDONALD'S #2211","merchantName":"MCDONALD'S","amountCents":987,"expectedPrimary":"FOOD_AND_DRINK","source":"hand-reviewed","reviewed":true}
+{"id":"c045","name":"WHOLE FOODS MKT","merchantName":"WHOLE FOODS","amountCents":8421,"expectedPrimary":"FOOD_AND_DRINK","source":"hand-reviewed","reviewed":true}
+{"id":"c046","name":"CHIPOTLE 1234 MAIN ST","merchantName":"CHIPOTLE","amountCents":1235,"expectedPrimary":"FOOD_AND_DRINK","source":"hand-reviewed","reviewed":true}
+{"id":"c047","name":"CORNER BISTRO BAR TAB","merchantName":null,"amountCents":5678,"expectedPrimary":"FOOD_AND_DRINK","source":"hand-reviewed","reviewed":true}
+{"id":"c048","name":"TRADER JOE'S #456","merchantName":"TRADER JOE'S","amountCents":6203,"expectedPrimary":"FOOD_AND_DRINK","source":"hand-reviewed","reviewed":true}
+{"id":"c049","name":"AMAZON.COM*BOOKS 123","merchantName":"AMAZON","amountCents":2499,"expectedPrimary":"GENERAL_MERCHANDISE","source":"hand-reviewed","reviewed":true}
+{"id":"c050","name":"TARGET T-2214 STORE","merchantName":"TARGET","amountCents":4321,"expectedPrimary":"GENERAL_MERCHANDISE","source":"hand-reviewed","reviewed":true}
+{"id":"c051","name":"WALMART SUPERCENTER 5521","merchantName":"WALMART","amountCents":10237,"expectedPrimary":"GENERAL_MERCHANDISE","source":"hand-reviewed","reviewed":true}
+{"id":"c052","name":"COSTCO WHOLESALE #338","merchantName":"COSTCO","amountCents":23450,"expectedPrimary":"GENERAL_MERCHANDISE","source":"hand-reviewed","reviewed":true}
+{"id":"c053","name":"BEST BUY 0001234","merchantName":"BEST BUY","amountCents":19999,"expectedPrimary":"GENERAL_MERCHANDISE","source":"hand-reviewed","reviewed":true}
+{"id":"c054","name":"BARNES & NOBLE #1122","merchantName":"BARNES & NOBLE","amountCents":3117,"expectedPrimary":"GENERAL_MERCHANDISE","source":"hand-reviewed","reviewed":true}
+{"id":"c055","name":"LEGALZOOM FILING FEE","merchantName":"LEGALZOOM","amountCents":9900,"expectedPrimary":"GENERAL_SERVICES","source":"hand-reviewed","reviewed":true}
+{"id":"c056","name":"H&R BLOCK TAX PREP","merchantName":"H&R BLOCK","amountCents":18900,"expectedPrimary":"GENERAL_SERVICES","source":"hand-reviewed","reviewed":true}
+{"id":"c057","name":"CHEGG STUDY SUBSCRIPTION","merchantName":"CHEGG","amountCents":1499,"expectedPrimary":"GENERAL_SERVICES","source":"hand-reviewed","reviewed":true}
+{"id":"c058","name":"PROFESSIONAL SERVICE FEE","merchantName":null,"amountCents":7500,"expectedPrimary":"GENERAL_SERVICES","source":"hand-reviewed","reviewed":true}
+{"id":"c059","name":"NOTARY PUBLIC FEE","merchantName":null,"amountCents":1500,"expectedPrimary":"GENERAL_SERVICES","source":"hand-reviewed","reviewed":true}
+{"id":"c060","name":"ADOBE CREATIVE CLOUD","merchantName":"ADOBE","amountCents":5999,"expectedPrimary":"GENERAL_SERVICES","source":"hand-reviewed","reviewed":true}
+{"id":"c061","name":"IRS USATAXPYMT 1040","merchantName":"IRS","amountCents":120000,"expectedPrimary":"GOVERNMENT_AND_NON_PROFIT","source":"hand-reviewed","reviewed":true}
+{"id":"c062","name":"CA FRANCHISE TAX BOARD","merchantName":"FTB","amountCents":43000,"expectedPrimary":"GOVERNMENT_AND_NON_PROFIT","source":"hand-reviewed","reviewed":true}
+{"id":"c063","name":"DMV RENEWAL FEE","merchantName":"DMV","amountCents":8500,"expectedPrimary":"GOVERNMENT_AND_NON_PROFIT","source":"hand-reviewed","reviewed":true}
+{"id":"c064","name":"RED CROSS DONATION","merchantName":"RED CROSS","amountCents":2500,"expectedPrimary":"GOVERNMENT_AND_NON_PROFIT","source":"hand-reviewed","reviewed":true}
+{"id":"c065","name":"SALVATION ARMY THRIFT","merchantName":"SALVATION ARMY","amountCents":1000,"expectedPrimary":"GOVERNMENT_AND_NON_PROFIT","source":"hand-reviewed","reviewed":true}
+{"id":"c066","name":"VETERANS AFFAIRS BENEFIT DEPOSIT","merchantName":"VA","amountCents":-3200,"expectedPrimary":"INCOME","source":"hand-reviewed","reviewed":true}
+{"id":"c067","name":"HOME DEPOT #6042","merchantName":"HOME DEPOT","amountCents":15678,"expectedPrimary":"HOME_IMPROVEMENT","source":"hand-reviewed","reviewed":true}
+{"id":"c068","name":"LOWES HOME IMPROV 112","merchantName":"LOWES","amountCents":8932,"expectedPrimary":"HOME_IMPROVEMENT","source":"hand-reviewed","reviewed":true}
+{"id":"c069","name":"ACE HARDWARE 0087","merchantName":"ACE HARDWARE","amountCents":2341,"expectedPrimary":"HOME_IMPROVEMENT","source":"hand-reviewed","reviewed":true}
+{"id":"c070","name":"SHERWIN WILLIAMS PAINT","merchantName":"SHERWIN WILLIAMS","amountCents":6789,"expectedPrimary":"HOME_IMPROVEMENT","source":"hand-reviewed","reviewed":true}
+{"id":"c071","name":"ROTO ROOTER PLUMBING","merchantName":"ROTO ROOTER","amountCents":28900,"expectedPrimary":"HOME_IMPROVEMENT","source":"hand-reviewed","reviewed":true}
+{"id":"c072","name":"TERMINIX PEST CONTROL","merchantName":"TERMINIX","amountCents":14900,"expectedPrimary":"HOME_IMPROVEMENT","source":"hand-reviewed","reviewed":true}
+{"id":"c073","name":"CVS/PHARMACY #3391","merchantName":"CVS","amountCents":4231,"expectedPrimary":"MEDICAL","source":"hand-reviewed","reviewed":true}
+{"id":"c074","name":"WALGREENS #1882","merchantName":"WALGREENS","amountCents":1876,"expectedPrimary":"MEDICAL","source":"hand-reviewed","reviewed":true}
+{"id":"c075","name":"DR SMITH CONSULT FEE","merchantName":null,"amountCents":15000,"expectedPrimary":"MEDICAL","source":"hand-reviewed","reviewed":true}
+{"id":"c076","name":"QUEST DIAGNOSTICS LAB","merchantName":"QUEST DIAGNOSTICS","amountCents":13200,"expectedPrimary":"MEDICAL","source":"hand-reviewed","reviewed":true}
+{"id":"c077","name":"DELTA DENTAL CLAIM","merchantName":"DELTA DENTAL","amountCents":9500,"expectedPrimary":"MEDICAL","source":"hand-reviewed","reviewed":true}
+{"id":"c078","name":"ONE MIND MENTAL HEALTH APP","merchantName":"ONE MIND","amountCents":599,"expectedPrimary":"MEDICAL","source":"hand-reviewed","reviewed":true}
+{"id":"c079","name":"SUPERCUTS #993","merchantName":"SUPERCUTS","amountCents":2800,"expectedPrimary":"PERSONAL_CARE","source":"hand-reviewed","reviewed":true}
+{"id":"c080","name":"SPORTS CLIPS HAIRCUTS","merchantName":"SPORTS CLIPS","amountCents":3200,"expectedPrimary":"PERSONAL_CARE","source":"hand-reviewed","reviewed":true}
+{"id":"c081","name":"NAIL SALON LUXE SPA","merchantName":"LUXE SPA","amountCents":6500,"expectedPrimary":"PERSONAL_CARE","source":"hand-reviewed","reviewed":true}
+{"id":"c082","name":"MASSAGE ENVY MEMBERSHIP","merchantName":"MASSAGE ENVY","amountCents":7999,"expectedPrimary":"PERSONAL_CARE","source":"hand-reviewed","reviewed":true}
+{"id":"c083","name":"DLUX BARBERSHOP","merchantName":"DLUX BARBERSHOP","amountCents":4500,"expectedPrimary":"PERSONAL_CARE","source":"hand-reviewed","reviewed":true}
+{"id":"c084","name":"ORANGE THEORY FITNESS","merchantName":"ORANGE THEORY","amountCents":15900,"expectedPrimary":"PERSONAL_CARE","source":"hand-reviewed","reviewed":true}
+{"id":"c085","name":"CONEDISON OF NY BILL PAY","merchantName":"CONEDISON","amountCents":18765,"expectedPrimary":"RENT_AND_UTILITIES","source":"hand-reviewed","reviewed":true}
+{"id":"c086","name":"PG&E BILL PAYMENT","merchantName":"PG&E","amountCents":21340,"expectedPrimary":"RENT_AND_UTILITIES","source":"hand-reviewed","reviewed":true}
+{"id":"c087","name":"COMCAST CABLE COMM","merchantName":"COMCAST","amountCents":12999,"expectedPrimary":"RENT_AND_UTILITIES","source":"hand-reviewed","reviewed":true}
+{"id":"c088","name":"VERIZON WIRELESS PAYMENT","merchantName":"VERIZON","amountCents":9500,"expectedPrimary":"RENT_AND_UTILITIES","source":"hand-reviewed","reviewed":true}
+{"id":"c089","name":"RENT PAYMENT 1 OAK ST","merchantName":null,"amountCents":185000,"expectedPrimary":"RENT_AND_UTILITIES","source":"hand-reviewed","reviewed":true}
+{"id":"c090","name":"AT&T INTERNET","merchantName":"AT&T","amountCents":6999,"expectedPrimary":"RENT_AND_UTILITIES","source":"hand-reviewed","reviewed":true}
+{"id":"c091","name":"UBER *TRIP HELP.UBER.COM","merchantName":"UBER","amountCents":2456,"expectedPrimary":"TRANSPORTATION","source":"hand-reviewed","reviewed":true}
+{"id":"c092","name":"LYFT RIDE 10/03","merchantName":"LYFT","amountCents":1873,"expectedPrimary":"TRANSPORTATION","source":"hand-reviewed","reviewed":true}
+{"id":"c093","name":"SHELL OIL 5748293","merchantName":"SHELL","amountCents":5231,"expectedPrimary":"TRANSPORTATION","source":"hand-reviewed","reviewed":true}
+{"id":"c094","name":"MTA METROCARD NYCTA","merchantName":"MTA","amountCents":6600,"expectedPrimary":"TRANSPORTATION","source":"hand-reviewed","reviewed":true}
+{"id":"c095","name":"PARKMOBIL PARKING","merchantName":"PARKMOBIL","amountCents":350,"expectedPrimary":"TRANSPORTATION","source":"hand-reviewed","reviewed":true}
+{"id":"c096","name":"EXXONMOBIL 0392841","merchantName":"EXXON","amountCents":4102,"expectedPrimary":"TRANSPORTATION","source":"hand-reviewed","reviewed":true}
+{"id":"c097","name":"DELTA AIR LINES 0062341","merchantName":"DELTA AIR LINES","amountCents":34250,"expectedPrimary":"TRAVEL","source":"hand-reviewed","reviewed":true}
+{"id":"c098","name":"HOTELTONIGHT *MOTEL 6","merchantName":"HOTELTONIGHT","amountCents":12900,"expectedPrimary":"TRAVEL","source":"hand-reviewed","reviewed":true}
+{"id":"c099","name":"AIRBNB * TRIP","merchantName":"AIRBNB","amountCents":45000,"expectedPrimary":"TRAVEL","source":"hand-reviewed","reviewed":true}
+{"id":"c100","name":"MARRIOTT BONVOY 8821","merchantName":"MARRIOTT","amountCents":22340,"expectedPrimary":"TRAVEL","source":"hand-reviewed","reviewed":true}
+{"id":"c101","name":"SIXT RENT A CAR","merchantName":"SIXT","amountCents":18700,"expectedPrimary":"TRAVEL","source":"hand-reviewed","reviewed":true}
+{"id":"c102","name":"UNITED AIRLINES 016992","merchantName":"UNITED AIR LINES","amountCents":28900,"expectedPrimary":"TRAVEL","source":"hand-reviewed","reviewed":true}
+{"id":"c103","name":"MISC PAYMENT 10/01","merchantName":null,"amountCents":1234,"expectedPrimary":"OTHER","source":"hand-reviewed","reviewed":true}
+{"id":"c104","name":"SQ *UNCLASSIFIED MERCHANT","merchantName":"SQ","amountCents":2500,"expectedPrimary":"OTHER","source":"hand-reviewed","reviewed":true}
+{"id":"c105","name":"POUCH TRANSACTION UNKNOWN","merchantName":null,"amountCents":890,"expectedPrimary":"OTHER","source":"hand-reviewed","reviewed":true}
+{"id":"c106","name":"ACH PAYMENT VARIOUS 556","merchantName":null,"amountCents":5500,"expectedPrimary":"OTHER","source":"hand-reviewed","reviewed":true}
+{"id":"c107","name":"CHECK #1042 PAYEE","merchantName":null,"amountCents":12000,"expectedPrimary":"OTHER","source":"hand-reviewed","reviewed":true}
+{"id":"c108","name":"BANK TRANSFER ADJUSTMENT","merchantName":null,"amountCents":100,"expectedPrimary":"OTHER","source":"hand-reviewed","reviewed":true}
+{"id":"f001","name":"STARBUCKS 123 MAIN","merchantName":"STARBUCKS","amountCents":5000,"expectedPrimary":"FOOD_AND_DRINK","source":"fixture","reviewed":false}
+{"id":"f002","name":"STARBUCKS 456 OAK","merchantName":"STARBUCKS","amountCents":3000,"expectedPrimary":"FOOD_AND_DRINK","source":"fixture","reviewed":false}
+{"id":"f003","name":"ACME PAYROLL","merchantName":null,"amountCents":-20000,"expectedPrimary":"INCOME","source":"fixture","reviewed":false}
+{"id":"f004","name":"AMAZON.COM","merchantName":"AMAZON","amountCents":7000,"expectedPrimary":"GENERAL_MERCHANDISE","source":"fixture","reviewed":false}
+{"id":"f005","name":"EVIL SHOP","merchantName":"EVIL\u202eSHOP","amountCents":1234,"expectedPrimary":"GENERAL_MERCHANDISE","source":"fixture","reviewed":false}
+{"id":"f006","name":"PENDING MERCHANT","merchantName":"PENDING MERCHANT","amountCents":9999,"expectedPrimary":"OTHER","source":"fixture","reviewed":false}
+{"id":"f007","name":"OLD COFFEE","merchantName":null,"amountCents":4000,"expectedPrimary":"FOOD_AND_DRINK","source":"fixture","reviewed":false}
+{"id":"f008","name":"STALE MERCHANT","merchantName":"STALE MERCHANT","amountCents":6000,"expectedPrimary":"OTHER","source":"fixture","reviewed":false}
+{"id":"f009","name":"REMOVED MERCHANT","merchantName":"REMOVED MERCHANT","amountCents":8000,"expectedPrimary":"OTHER","source":"fixture","reviewed":false}
+{"id":"f010","name":"OTHER MERCHANT","merchantName":"OTHER MERCHANT","amountCents":55555,"expectedPrimary":"OTHER","source":"fixture","reviewed":false}
+{"id":"f011","name":"\u0000\u0007","merchantName":null,"amountCents":100,"expectedPrimary":"OTHER","source":"fixture","reviewed":false}
+{"id":"f012","name":"ACH XFER WEB12345","merchantName":null,"amountCents":1500,"expectedPrimary":"TRANSFER_OUT","source":"fixture","reviewed":false}
+{"id":"f013","name":"PAYPAL INST XFER","merchantName":"PAYPAL","amountCents":2500,"expectedPrimary":"TRANSFER_IN","source":"fixture","reviewed":false}
+{"id":"f014","name":"NETFLIX.COM","merchantName":"NETFLIX","amountCents":1599,"expectedPrimary":"ENTERTAINMENT","source":"fixture","reviewed":false}
+{"id":"f015","name":"CHIP\u200bOTLE 5678","merchantName":null,"amountCents":1185,"expectedPrimary":"FOOD_AND_DRINK","source":"fixture","reviewed":false}
+{"id":"f016","name":"MCDONALD'S #9988","merchantName":"MCDONALD'S","amountCents":845,"expectedPrimary":"FOOD_AND_DRINK","source":"fixture","reviewed":false}

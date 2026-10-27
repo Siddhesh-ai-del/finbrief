@@ -8,6 +8,10 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noEmit": true,
+    // evals/ runs under Node's native type stripping (real ESM), which
+    // requires explicit .ts extensions on relative imports; the eval
+    // runner and its tests import each other with extensions on purpose.
+    "allowImportingTsExtensions": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",

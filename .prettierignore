@@ -7,3 +7,4 @@ package-lock.json
 playwright-report
 test-results
 *.min.*
+src/db/migrations
