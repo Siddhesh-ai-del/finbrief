@@ -335,6 +335,33 @@ describe("removed item (Step 1.6 tombstone)", () => {
   });
 });
 
+describe("freshness watermark (Step 2.2)", () => {
+  it("advances last_synced_at with the cursor commit", async () => {
+    await pool.query(
+      "UPDATE plaid_items SET last_synced_at = '2020-01-01T00:00:00Z' WHERE id = $1",
+      [itemId],
+    );
+    const before = (
+      await pool.query("SELECT last_synced_at FROM plaid_items WHERE id = $1", [
+        itemId,
+      ])
+    ).rows[0] as { last_synced_at: Date };
+
+    const mock = createSyncMock([page3]);
+    const sync = createTransactionSync({ client: mock.client, secrets });
+    await sync.syncItem(db, itemId);
+
+    const after = (
+      await pool.query("SELECT last_synced_at FROM plaid_items WHERE id = $1", [
+        itemId,
+      ])
+    ).rows[0] as { last_synced_at: Date };
+    expect(new Date(after.last_synced_at).getTime()).toBeGreaterThan(
+      new Date(before.last_synced_at).getTime(),
+    );
+  });
+});
+
 /** Deterministic PRNG so the property test is CI-stable. */
 function mulberry32(seed: number): () => number {
   let a = seed;

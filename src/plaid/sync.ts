@@ -22,6 +22,11 @@
  *   for the upstream call and never logged — Step 1.2's negative test
  *   applies to this module by the same reasoning (the upstream call
  *   is plain network I/O outside any transaction).
+ * - **Freshness stamp** (Step 2.2): `last_synced_at` advances in the
+ *   SAME transaction as the cursor commit, so the staleness policy
+ *   can never see a sync time that ran ahead of applied data (and a
+ *   quiet-but-healthy account reads as fresh — MAX(updated_at) would
+ *   lie).
  *
  * The client type is structural (mirrors `PlaidLinkClient` from Step
  * 1.1): the real `PlaidApi` satisfies it, tests script it offline.
@@ -199,7 +204,7 @@ async function applyPage(
 
   await tx
     .update(plaidItems)
-    .set({ syncCursor: page.next_cursor })
+    .set({ syncCursor: page.next_cursor, lastSyncedAt: new Date() })
     .where(eq(plaidItems.id, item.id));
 }
 

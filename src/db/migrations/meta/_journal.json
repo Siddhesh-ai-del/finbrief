@@ -43,6 +43,13 @@
       "when": 1793014303341,
       "tag": "0005_flippant_tombstone",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1793075885814,
+      "tag": "0006_bitter_ink",
+      "breakpoints": true
     }
   ]
 }

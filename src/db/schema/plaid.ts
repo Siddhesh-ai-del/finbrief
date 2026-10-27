@@ -42,6 +42,14 @@ export const plaidItems = pgTable(
      */
     syncCursor: text("sync_cursor"),
     /**
+     * Freshness watermark (Step 2.2): when a sync last COMMITTED
+     * (same transaction as the cursor advance, so it cannot run
+     * ahead of applied data). This is the `as_of` age source for
+     * staleness — MAX(updated_at) would lie for a quiet account
+     * whose syncs succeed with no new transactions.
+     */
+    lastSyncedAt: ts("last_synced_at"),
+    /**
      * Lifecycle (Step 1.4 + 1.6): `stale` means the connection lost
      * login/permission and its data must not be presented as
      * current; `removed` means unsubscribe ran /item/remove — Plaid
