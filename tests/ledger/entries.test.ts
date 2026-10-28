@@ -76,7 +76,7 @@ afterAll(async () => {
 });
 
 beforeEach(async () => {
-  await pool.query("TRUNCATE ledger_entries, ledger_counterparties");
+  await pool.query("TRUNCATE ledger_entries, ledger_counterparties CASCADE");
 });
 
 const mk = (suffix: string) => ({

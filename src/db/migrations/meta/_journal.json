@@ -57,6 +57,13 @@
       "when": 1793198451463,
       "tag": "0007_spotty_newton_destine",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1793200004822,
+      "tag": "0008_sharp_triathlon",
+      "breakpoints": true
     }
   ]
 }

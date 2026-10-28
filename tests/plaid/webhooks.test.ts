@@ -125,7 +125,7 @@ afterAll(async () => {
 });
 
 beforeEach(async () => {
-  await pool.query("TRUNCATE transactions");
+  await pool.query("TRUNCATE transactions CASCADE");
   await pool.query(
     `UPDATE plaid_items
         SET status = 'active', stale_reason = NULL,

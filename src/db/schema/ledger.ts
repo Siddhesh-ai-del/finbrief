@@ -36,9 +36,13 @@ import {
   uniqueIndex,
 } from "drizzle-orm/pg-core";
 import { organization } from "./organization";
+import { transactions } from "./transactions";
 
 export const LEDGER_ENTRY_KINDS = ["debt", "settlement"] as const;
 export type LedgerEntryKind = (typeof LEDGER_ENTRY_KINDS)[number];
+
+export const LINK_STATUSES = ["proposed", "confirmed", "rejected"] as const;
+export type LinkStatus = (typeof LINK_STATUSES)[number];
 
 export const ledgerCounterparties = pgTable(
   "ledger_counterparties",
@@ -112,3 +116,52 @@ export const ledgerEntriesRelations = relations(ledgerEntries, ({ one }) => ({
     references: [ledgerCounterparties.id],
   }),
 }));
+
+/**
+ * Repayment ↔ transaction link (plan Step 3.2) — the proposal/decision
+ * split that keeps the model away from money facts:
+ *
+ * - `proposed` is the ONLY status a caller (agent or code) can write.
+ *   `confirmed` exists solely behind an explicit human decision with a
+ *   `decided_by` actor id — never auto-confirm (plan: "ambiguous
+ *   matches surface for human confirmation").
+ * - `decided_by` is plain text with deliberately NO foreign key: if a
+ *   user row ever disappears, the record of who confirmed a money fact
+ *   must not disappear with it. (The reverse — link rows cascading
+ *   with their transaction — is intentional: a "proof" link whose
+ *   proof row is gone asserts something nobody can verify.)
+ * - The two partial unique indexes ARE the "one live link per entry,
+ *   one live proof per transaction" invariant: rejected links fall out
+ *   of the index, so a rejection frees both sides for a fresh
+ *   proposal while history of the rejected row remains.
+ */
+export const ledgerEntryLinks = pgTable(
+  "ledger_entry_links",
+  {
+    id: text("id")
+      .primaryKey()
+      .$defaultFn(() => randomUUID()),
+    organizationId: text("organization_id")
+      .notNull()
+      .references(() => organization.id, { onDelete: "cascade" }),
+    entryId: text("entry_id")
+      .notNull()
+      .references(() => ledgerEntries.id, { onDelete: "cascade" }),
+    transactionId: text("transaction_id")
+      .notNull()
+      .references(() => transactions.id, { onDelete: "cascade" }),
+    status: text("status").$type<LinkStatus>().notNull().default("proposed"),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    decidedAt: timestamp("decided_at"),
+    decidedBy: text("decided_by"),
+  },
+  (t) => [
+    index("ledger_entry_links_org_idx").on(t.organizationId),
+    uniqueIndex("ledger_entry_links_entry_live_idx")
+      .on(t.entryId)
+      .where(sql`${t.status} <> 'rejected'`),
+    uniqueIndex("ledger_entry_links_txn_live_idx")
+      .on(t.transactionId)
+      .where(sql`${t.status} <> 'rejected'`),
+  ],
+);

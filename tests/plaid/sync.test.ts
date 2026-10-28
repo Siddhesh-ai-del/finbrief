@@ -117,7 +117,7 @@ afterAll(async () => {
 });
 
 beforeEach(async () => {
-  await pool.query("TRUNCATE transactions");
+  await pool.query("TRUNCATE transactions CASCADE");
   await pool.query("UPDATE plaid_items SET sync_cursor = NULL");
 });
 
@@ -398,7 +398,7 @@ describe("property: interleavings converge", () => {
     }));
 
     const runSync = async (script: ScriptStep[]): Promise<number> => {
-      await pool.query("TRUNCATE transactions");
+      await pool.query("TRUNCATE transactions CASCADE");
       await pool.query("UPDATE plaid_items SET sync_cursor = NULL");
       const mock = createSyncMock(script);
       const sync = createTransactionSync({ client: mock.client, secrets });

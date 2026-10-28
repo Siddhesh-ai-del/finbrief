@@ -133,7 +133,7 @@ afterAll(async () => {
 });
 
 beforeEach(async () => {
-  await pool.query("TRUNCATE transactions");
+  await pool.query("TRUNCATE transactions CASCADE");
 });
 
 /**

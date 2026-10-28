@@ -27,6 +27,7 @@ const EXPECTED_TABLES = [
   "invitation",
   "ledger_counterparties",
   "ledger_entries",
+  "ledger_entry_links",
   "member",
   "organization",
   "plaid_items",
