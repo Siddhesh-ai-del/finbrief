@@ -25,6 +25,8 @@ const EXPECTED_TABLES = [
   "consent_records",
   "entitlements",
   "invitation",
+  "ledger_counterparties",
+  "ledger_entries",
   "member",
   "organization",
   "plaid_items",
