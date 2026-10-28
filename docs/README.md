@@ -15,6 +15,8 @@ link below points to a file that exists today.
   and design guarantees
 - [Support](../SUPPORT.md) — where to get help
 - [Changelog](../CHANGELOG.md) — notable changes, Keep a Changelog format
+- [Design direction](./design-direction.md) — binding UI/UX contract:
+  premium/editorial tone, money rendering, states, anti-patterns, PR gate
 
 ## Planned documentation
 
